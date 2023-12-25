@@ -23,7 +23,9 @@ body {
   font-family: var(--text_font);
   font-weight: normal;
 }
-
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--heading_text);
+}
 .navigation_bar {
   width: 100%;
   height: 80px;
@@ -77,7 +79,7 @@ nav ul {
 
 .btn_primary:hover {
   background-color: orange;
-  
+
 }
 .btn_accent {
   border: 1px solid var(--background);
@@ -122,6 +124,72 @@ a {
   font-weight: 200;
   margin-bottom: 0;
 }
+
+.label {
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+section {
+  margin-left: var(--sm);
+  margin-right: var(--sm);
+  padding-top: var(--lg);
+  padding-bottom: var(--lg);
+}
+
+.heading {
+  font-weight: 200;
+  font-size: 42px;
+}
+
+.paragraph {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.grid_container {
+  margin-top: var(--xlg);
+}
+
+.about_us_grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  grid-row: auto;
+
+}
+.our_mission_grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  grid-row: auto;
+  margin-top: var(--lg);
+}
+#image_wrapper {
+  min-width: 100%;
+  height: 470px;
+  background-size: cover;
+  background-position: center;
+}
+.image_wrapper_vision_jpg {
+  background-image: url(./assets/vision.jpg);
+}
+
+.image_wrapper_mission_jpg {
+  background-image: url(./assets/mission.jpg);
+}
+
+.text_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+.heading_small {
+  font-size: 36px;
+  font-weight: 200;
+  margin: 0;
+}
 /*utility classes*/
 .text_primary {
   color: var(--primary);
@@ -129,4 +197,19 @@ a {
 
 .text_white {
   color: #fff;
+}
+
+.text_centered {
+  text-align: center;
+}
+
+.text_start {
+  text-align: start;
+}
+
+.padding_left_sm {
+  padding-left: var(--sm_gap);
+}
+.padding_right_sm {
+  padding-right: var(--sm_gap);
 }
