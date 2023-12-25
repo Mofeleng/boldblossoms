@@ -10,12 +10,11 @@ function NavigationBar() {
                 </div>
                 <nav>
                   <ul>
-                    <li>About us</li>
-                    <li>Contestents</li>
-                    <li>Events</li>
-                    <li>Partnerships</li>
-                    <li>Blog</li>
-                    <li>Results</li>
+                    <a href="/about"><li>About us</li></a>
+                    <a href="/contestants"><li>Contestents</li></a>
+                    <a href="/events"><li>Events</li></a>
+                    <a href="/blogs"><li>Blog</li></a>
+                    <a href="/results"><li>Results</li></a>
                   </ul>
                 </nav>
                 <div className="buttons">
