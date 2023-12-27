@@ -1,14 +1,16 @@
 import React from 'react'
 import GridTemplate from '../UserInterface/GridTemplate';
+import SectionHeadingTemplate from '../UserInterface/SectionHeadingTemplate';
 
 function AboutSection() {
   return (
     <section id="about">
           <div className="container text_centered">
-            <span className="label">About us</span>
-            <h2 className='heading'>Unveiling Bold Blossoms: A New Chapter in Empowered Elegance</h2>
-            <p className='paragraph'>Welcome to 'Unveiling Bold Blossoms,' where we embark on a transformative journey, scripting a new chapter in the realm of empowered elegance. This inaugural pageant is more than an event; it's a celebration of individuality, resilience, and the empowering beauty that lies within.</p>
-
+            <SectionHeadingTemplate
+              label={"About us"}
+              heading={`Unveiling Bold Blossoms: A New Chapter in Empowered Elegance`}
+              paragraph={`Welcome to 'Unveiling Bold Blossoms,' where we embark on a transformative journey, scripting a new chapter in the realm of empowered elegance. This inaugural pageant is more than an event; it's a celebration of individuality, resilience, and the empowering beauty that lies within.`}
+            />
             <div className="grid_container">
             <GridTemplate
                   direction={1}
