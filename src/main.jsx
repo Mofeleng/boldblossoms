@@ -7,12 +7,17 @@ import Footer from './Components/Footer'
 import HomePage from './Pages/HomePage'
 import RegisterPage from './Pages/RegisterPage'
 import LoginPage from './Pages/LoginPage'
+import Layout from './Layout'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
    <BrowserRouter>
     <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={
+          <Layout>
+            <HomePage />
+          </Layout>
+        } />
         <Route path='/apply' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
     </Routes>
