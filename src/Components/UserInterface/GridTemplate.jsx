@@ -12,7 +12,7 @@ function GridTemplate({ direction, text_wrapper_heading, text_wrapper_text, img_
     const [ buttonClassnames, setButtonClassNames ] = useState(null);
     useEffect(() => {
         if (is_button) {
-            setButtonClassNames(button_type ? 'btn btn_primary' : 'btn btn_accent');
+            setButtonClassNames(button_type ? 'btn btn_primary' : 'btn btn_accent btn_border_black');
         }
     }, [is_button, button_type]);
 

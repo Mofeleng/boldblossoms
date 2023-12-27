@@ -92,6 +92,10 @@ nav ul {
   color: #000;
 }
 
+.btn_border_black {
+  border: 1px solid #000;
+}
+
 .hero {
   min-width: 100% !important;
   height: 100vh !important;
@@ -184,6 +188,11 @@ section {
 .image_wrapper_contestant_jpg {
   background-image: url(./assets/contestent.jpg);
   background-position: center top !important;
+}
+
+.image_wrapper_partners_jpg {
+  background-image: url(./assets/partnership.jpg);
+  background-position: center 30% !important;
 }
 
 .text_wrapper {

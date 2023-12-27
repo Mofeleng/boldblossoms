@@ -21,6 +21,16 @@ function GetInvolvedSection() {
                 button_text={"Apply now"}
                 button_link={"/apply"}
                />
+               <GridTemplate
+                direction={0}
+                img_src_classname={"image_wrapper_partners_jpg"}
+                text_wrapper_heading={"Empower through collaboration: sponsorships and partnerships"}
+                text_wrapper_text={`Seize the opportunity to align your brand with empowerment and beauty. "Bold Blossoms" invites businesses and organizations to be a pivotal part of our inaugural event through sponsorship and partnerships. Explore tailored packages that not only showcase your support for empowerment but also offer unique benefits and visibility. Join hands with us as we create a memorable celebration, where your brand becomes synonymous with the spirit of Bold Blossoms.`}  
+                is_button={1}
+                button_type={0}
+                button_text={"Become a sponsor"}
+                button_link={"/partners"}
+               />
                
             </div>
         </div>
