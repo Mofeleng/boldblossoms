@@ -70,8 +70,16 @@ nav ul {
   text-transform: uppercase;
   font-weight: 500;
   color: inherit;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
+.btn_lg {
+  padding: 20px 30px;
+  font-size: large;
+
+}
 .btn_primary {
   background-color: var(--primary);
   margin-right: var(--sm_gap);
@@ -212,11 +220,15 @@ section {
 }
 
 .heading_small {
+  font-size: 42px;
+  font-weight: 200;
+  margin: 0;
+}
+.heading_smaller {
   font-size: 26px;
   font-weight: 200;
   margin: 0;
 }
-
 .blog_preview_card {
   border: 1px solid #000;
   padding: var(--sm) var(--sm_gap);
@@ -225,6 +237,35 @@ section {
 }
 .blog_preview_card:hover {
   background-color: ghostwhite;
+}
+
+.contact_form {
+  margin-top: var(--md);
+}
+#name, #email {
+  width: 80%;
+  height: 50px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 50px;
+  display: block;
+  margin: var(--md_gap) auto;
+  font-family: inherit;
+  padding-left: var(--md_gap);
+
+}
+
+textarea {
+  width: 80%;
+  height: 200px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 50px;
+  display: block;
+  margin: var(--md_gap) auto;
+  font-family: inherit;
+  padding-left: var(--md_gap);
+  padding-top: var(--md_gap);
 }
 /*utility classes*/
 .text_primary {
