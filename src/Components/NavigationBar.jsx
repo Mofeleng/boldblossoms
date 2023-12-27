@@ -19,7 +19,7 @@ function NavigationBar() {
                 </nav>
                 <div className="buttons">
                   <a href="/apply" className='btn btn_primary'>Apply now</a>
-                  <a href='/contact' className='btn btn_accent'>Contact us</a>
+                  <a href='/login' className='btn btn_accent'>Log in</a>
                 </div>
             </div>
            </div>

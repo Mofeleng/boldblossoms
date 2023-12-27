@@ -247,7 +247,7 @@ section {
 .contact_form {
   margin-top: var(--md);
 }
-#name, #email {
+input {
   width: 80%;
   height: 50px;
   outline: none;
@@ -272,6 +272,10 @@ textarea {
   padding-left: var(--md_gap);
   padding-top: var(--md_gap);
 }
+.textarea_smaller {
+  height: 100px;
+}
+
 
 #footer {
   background-color: #343434;
@@ -290,6 +294,56 @@ textarea {
 .footer_grid input {
   width: 100% !important;
   margin: none !important;
+}
+
+#solidbg {
+  background-color: #3c3c3c;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.custom-file-upload {
+  position: relative;
+  margin-top: var(--md_gap);
+}
+
+.custom-file-upload label {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.custom-file-upload input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#file-name {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.apply_form input {
+  width:100%;
+  padding-right: var(--md_gap);
+}
+
+.apply_form textarea {
+  width: 100%;
+}
+
+.checkbox {
+  display: inline-block !important;
+  width: 20px !important;
+  height: 20px !important;
 }
 /*utility classes*/
 .text_primary {
@@ -323,6 +377,9 @@ textarea {
 }
 .padding_left_md {
   padding-left: var(--md_gap);
+}
+.margin_top_lg {
+  margin-top: var(--lg);
 }
 .bg_secondary {
   background-color: var(--bg_secondary);
