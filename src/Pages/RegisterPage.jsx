@@ -1,7 +1,6 @@
 import React from 'react'
 import NavigationBar from '../Components/NavigationBar'
 import Footer from '../Components/Footer'
-import HeroSection from '../Components/Registeration/HeroSection';
 import RegistrationForm from '../Components/Registeration/RegistrationForm';
 import SolidBGHeroTemplate from '../Components/UserInterface/SolidBGHeroTemplate';
 
