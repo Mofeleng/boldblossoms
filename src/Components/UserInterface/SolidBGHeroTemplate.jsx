@@ -1,4 +1,5 @@
 import React from 'react'
+import SectionHeadingTemplate from './SectionHeadingTemplate'
 
 function SolidBGHeroTemplate(props) {
   return (
