@@ -18,8 +18,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <HomePage />
           </Layout>
         } />
-        <Route path='/apply' element={<RegisterPage />} />
-        <Route path='/login' element={<LoginPage />} />
+        <Route path='/apply' element={
+        <Layout>
+          <RegisterPage />
+        </Layout>
+        } />
+        <Route path='/login' element={
+          <Layout>
+            <LoginPage />
+          </Layout>
+        } />
     </Routes>
    </BrowserRouter>
   </React.StrictMode>,
