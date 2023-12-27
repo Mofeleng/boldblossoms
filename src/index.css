@@ -14,6 +14,7 @@
   --sm_gap: 10px;
   --md_gap: 20px;
   --lg_gap: 30px;
+  --bg_secondary: ghostwhite;
 }
 
 /*selector classess */
@@ -212,4 +213,15 @@ section {
 }
 .padding_right_sm {
   padding-right: var(--sm_gap);
+}
+.padding_right_md {
+  padding-right: var(--md_gap);
+}
+.padding_left_md {
+  padding-left: var(--md_gap);
+}
+.bg_secondary {
+  background-color: var(--bg_secondary);
+  margin: none;
+  padding: none;
 }
