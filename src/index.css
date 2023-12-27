@@ -153,16 +153,19 @@ section {
   margin-top: var(--xlg);
 }
 
-.about_us_grid {
+.direction_one_grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
   grid-row: auto;
 
 }
-.our_mission_grid {
+.direction_zero_grid {
   display: grid;
   grid-template-columns: 7fr 5fr;
   grid-row: auto;
+
+}
+.grid_margin_top_lg {
   margin-top: var(--lg);
 }
 #image_wrapper {
@@ -178,12 +181,19 @@ section {
 .image_wrapper_mission_jpg {
   background-image: url(./assets/mission.jpg);
 }
+.image_wrapper_contestant_jpg {
+  background-image: url(./assets/contestent.jpg);
+  background-position: center top !important;
+}
 
 .text_wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
+}
+
+.text_wrapper a {
+  align-self: flex-start;
 }
 
 .heading_small {
