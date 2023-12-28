@@ -23,6 +23,7 @@ body {
   padding: 0;
   font-family: var(--text_font);
   font-weight: normal;
+  overflow-x: hidden !important;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--heading_text);
@@ -33,6 +34,7 @@ h1,h2,h3,h4,h5,h6 {
   background-color: rgba(0, 0, 0, 0.55);
   position: absolute;
   top: 0;
+  padding-top: 20px;
 }
 
 .container {
@@ -40,30 +42,42 @@ h1,h2,h3,h4,h5,h6 {
   margin-left: auto;
   margin-right: auto;
 }
-
-.logo {
-  font-family: var(--heading_text);
-  font-weight: normal;
-}
-
 .navbar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: #ffffff;
+  background-color: inherit;
+  color: #fff;
 }
 
-nav ul {
+.logo {
+  font-size: 1.5rem;
+}
+
+.nav-links {
   list-style: none;
   display: flex;
-  flex-direction: row;
-  gap: var(--sm_gap);
-  font-family: var(--text_font);
-  font-weight: 500;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
   text-transform: uppercase;
 }
 
+.hamburger-menu {
+  cursor: pointer;
+  display: none;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: 0.4s;
+}
 .footer ul {
   list-style: none;
   color: #fff;
@@ -94,6 +108,10 @@ nav ul {
 .btn_primary:hover {
   background-color: orange;
 
+}
+
+.no_margin_right {
+  margin-right: 0 !important;
 }
 .btn_accent {
   border: 1px solid var(--background);
@@ -397,4 +415,31 @@ textarea {
   background-color: var(--bg_secondary);
   margin: none;
   padding: none;
+}
+
+/* Responsiveness */
+/* Navbar.css */
+
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .nav-links.mobile-menu-open {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
 }
