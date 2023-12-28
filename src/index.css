@@ -367,7 +367,9 @@ textarea {
 .text_black {
   color: #000;
 }
-
+.text_red {
+  color: red;
+}
 .text_centered {
   text-align: center;
 }

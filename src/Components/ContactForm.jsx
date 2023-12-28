@@ -10,8 +10,22 @@ function ContactForm() {
     const [ isError, setIsError ] = useState(null);
     const [ error, setError ] = useState(null);
 
+    const [ nameError, setNameError ] = useState(null);
+    const [ emailError, setEmailError ] = useState(null);
+    const [ messageError, setMessageError ] = useState(null);
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!name) {
+            return setNameError("Please enter your name.");
+        }
+        if (!email) {
+            return setEmailError("Please enter your email");
+        }
+        if (!message) {
+            return setMessageError("Please fill in a message")
+        }
         
         try {
             const graphQLClient = new GraphQLClient(API_ENDPOINT)
@@ -62,21 +76,28 @@ function ContactForm() {
                     value={name}
                     onChange={(e) => {
                         setName(e.target.value);
+                        setNameError(null);
                     }}
                     />
+                    <span className="text_red text_start">{nameError}</span>
                     <input type="email" name="email" id="email" placeholder='Email'
                         value={email}
                         onChange={(e) => {
                             setEmail(e.target.value);
+                            setEmailError(null);
                         }}
                     />
+                    <span className="text_red text_start">{emailError}</span>
+
                     <textarea name="message" id="message" placeholder='Message'
                         value={message}
                         onChange={(e) => {
                             setMessage(e.target.value);
+                            setMessageError(null);
                         }}
                     >
                     </textarea>
+                    <span className="text_red text_start">{messageError}</span>
                     <button className="btn btn_primary btn_lg" onClick={(e) => handleSubmit(e)}>Submit</button>
                 </form>
             ): <></>}
