@@ -345,6 +345,16 @@ textarea {
   width: 20px !important;
   height: 20px !important;
 }
+.form_output_message_container {
+  padding: 20px 15px;
+}
+.success {
+  background-color: green;
+  
+}
+.error {
+  background-color: red;
+}
 /*utility classes*/
 .text_primary {
   color: var(--primary);
