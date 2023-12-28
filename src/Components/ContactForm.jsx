@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { gql, GraphQLClient } from 'graphql-request';
+import useEmailValidation from '../Hooks/useEmailValidation';
+
+
 function ContactForm() {
     const API_ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
 
@@ -27,6 +30,9 @@ function ContactForm() {
             return setMessageError("Please fill in a message")
         }
         
+        if (!useEmailValidation(email)) {
+            return setEmailError("Please enter a valid email");
+        }
         try {
             const graphQLClient = new GraphQLClient(API_ENDPOINT)
 
