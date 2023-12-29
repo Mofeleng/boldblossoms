@@ -427,8 +427,7 @@ textarea {
 }
 .bg_secondary {
   background-color: var(--bg_secondary);
-  margin: none;
-  padding: none;
+  
 }
 
 /* Responsiveness */
@@ -484,5 +483,18 @@ textarea {
 
   .text_wrapper {
     margin-top: var(--sm);
+  }
+ 
+}
+@media screen and (max-width: 770px) {
+  .blog_preview_grid {
+    grid-template-columns: 12fr;
+  }
+  .title {
+    font-size: 46px;
+  }
+
+ .bg_secondary {
+    background: #fff;
   }
 }
