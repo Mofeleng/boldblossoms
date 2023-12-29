@@ -15,7 +15,7 @@ const NavigationBar = () => {
         <h2 className="heading_smaller">Boldblossoms<span className="text_primary">.</span></h2>
       </div>
       <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-        <li><a href="/about">About</a></li>
+        <li><a href="/blogs">Blogs</a></li>
         <li><a href="/partners">Partners</a></li>
         <li><a href="/events">Events</a></li>
         <li><a href="/contestanrs">Contestants</a></li>
