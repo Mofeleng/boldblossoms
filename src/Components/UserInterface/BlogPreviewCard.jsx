@@ -1,4 +1,5 @@
 import React from 'react'
+import useConvertDateToString from '../../Hooks/useConvertDateToString';
 
 function BlogPreviewCard({ categories, title, slug, preview, author, published }) {
   let i = categories.length;
@@ -15,7 +16,7 @@ function BlogPreviewCard({ categories, title, slug, preview, author, published }
           <p className="paragraph">
             { preview }
           </p>
-          <span className="label text_black">{ author } - {published}</span>
+          <span className="label text_black">{ author } - {useConvertDateToString(published)}</span>
       </div>
     </a>
   )
