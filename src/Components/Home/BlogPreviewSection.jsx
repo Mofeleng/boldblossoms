@@ -60,7 +60,14 @@ function BlogPreviewSection() {
                 <div className="blog_preview_grid">
                     {blogs.map(blog => {
                         return (
-                            <BlogPreviewCard />
+                            <BlogPreviewCard key={blog.id}
+                                categories={blog.categories}
+                                title={blog.title}
+                                slug={blog.slug}
+                                preview={blog.preview}
+                                author={blog.author.authorName}
+                                published={blog.publishedAt}
+                            />
                         );
                     })}
                 </div>
