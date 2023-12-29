@@ -251,6 +251,29 @@ section {
   align-self: flex-start;
 }
 
+.blog_item {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sm);
+  align-items: center;
+  padding: 20px 10px;
+  transition: 200ms;
+}
+
+.blog_item:hover {
+  background-color: ghostwhite;
+  
+  cursor: pointer;
+  border-radius: var(--sm_gap);
+}
+.blog_item:hover .text_black {
+  /**/
+}
+.image_blog_wrapper img {
+  object-fit: cover;
+  border-radius: var(--sm);
+}
+
 .heading_small {
   font-size: 42px;
   font-weight: 200;
@@ -431,8 +454,6 @@ textarea {
 }
 
 /* Responsiveness */
-/* Navbar.css */
-
 
 /* Media Query for Small Screens */
 @media screen and (max-width: 1120px) {

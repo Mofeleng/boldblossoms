@@ -1,12 +1,14 @@
 import React from 'react'
 import SectionHeadingTemplate from './SectionHeadingTemplate'
 
-function SolidBGHeroTemplate(props) {
+function SolidBGHeroTemplate({ label, heading, paragraph}) {
   return (
     <div id="solidbg" className='bg_darkgrey'>
         <div className="container text_centered text_white">
             <SectionHeadingTemplate
-                {...props}
+                label={label}
+                heading={heading}
+                paragraph={paragraph}
             />
         </div>
     </div>
