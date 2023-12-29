@@ -449,6 +449,7 @@ textarea {
   }
 
   .nav-links.mobile-menu-open {
+    margin-top: 0;
     display: flex;
   }
 
@@ -497,4 +498,34 @@ textarea {
  .bg_secondary {
     background: #fff;
   }
+  .footer_grid {
+    grid-template-columns: 12fr;
+  }
 }
+
+@media screen and (max-width: 590px) {
+  .title {
+    font-size: 36px;
+    margin-top: 0;
+  }
+  .hero {
+    padding-top: var(--md)
+  }
+  .hero_content {
+    padding: 20px 10px;
+    height: auto;
+    margin-top: 0;
+    text-align: center;
+  }
+  .hero_content .btn {
+    display: block;
+    margin-bottom: var(--md_gap);
+  }
+  .heading {
+    font-size: 36px;
+  }
+  .heading_small {
+    font-size: 36px;
+  }
+}
+
