@@ -262,13 +262,10 @@ section {
 
 .blog_item:hover {
   background-color: ghostwhite;
-  
   cursor: pointer;
   border-radius: var(--sm_gap);
 }
-.blog_item:hover .text_black {
-  /**/
-}
+
 .image_blog_wrapper img {
   object-fit: cover;
   border-radius: var(--sm);
