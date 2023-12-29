@@ -529,3 +529,13 @@ textarea {
   }
 }
 
+@media screen and (max-width: 420px) {
+  .title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: var(--sm);
+  }
+  .heading, .heading_small {
+    font-size: 28px;
+  }
+}
