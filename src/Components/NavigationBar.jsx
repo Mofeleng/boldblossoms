@@ -1,7 +1,4 @@
-// Navbar.js
-
 import React, { useState } from 'react';
-import './Navigationbar.css';
 
 const NavigationBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
