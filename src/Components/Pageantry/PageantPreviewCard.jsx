@@ -1,20 +1,21 @@
 import React from 'react'
-import './Pageants.css';
-
-function PageantPreviewCard() {
+import './Pageants.css'
+import { useState, useEffect } from 'react'
+import { gql, GraphQLClient } from 'graphql-request'
+function PageantPreviewCard({ title, coverPhoto, preview, slug}) {
   return (
     <div className="pageant">
         <div className="image_cover">
-            <img src="/src/assets/vision.jpg" alt=""/>
+            <img src={coverPhoto.url} alt=""/>
         </div>
         <div className="pageant_info">
-            <h3 className="heading_smaller">Mrs Bold Blossoms 24</h3>
+            <h3 className="heading_smaller">{title}</h3>
             <p className="paragraph">
-            Bold Blossoms proudly presents its inaugural pageant, "Mrs Bold Blossoms 24," where grace meets empowerment, and every woman is a blooming masterpiece. As we celebrate our 24th year of boldness, beauty, and blossoming strength, we invite extraordinary women from diverse backgrounds to showcase their elegance and embrace the power within.
+                { preview }
             </p>
             <div className="buttons">
-                <a href="/apply/in" className='btn btn_primary'>Apply now</a>
-                <a href="/pagent/pagent_info" className='btn btn_accent btn_border_black'>Learn More</a>
+                <a href={`/apply/${slug}`} className='btn btn_primary'>Apply now</a>
+                <a href={`/pageant/${slug}`} className='btn btn_accent btn_border_black'>Learn More</a>
             </div>
             
         </div>
