@@ -9,7 +9,7 @@ function Footer() {
                 <h2 className='heading_smaller'>Contact Us</h2>
                 <p>Email: info@example.com</p>
                 <p>Phone: +1 123 456 7890</p>
-                <p>Phone: </p>
+                <p></p>
                 </div>
                 <div className="footer-section">
                 <h2 className='heading_smaller'>Follow Us</h2>
