@@ -17,7 +17,7 @@ const NavigationBar = () => {
       <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
         <li><a href="/blogs">Blogs</a></li>
         <li><a href="/partners">Partners</a></li>
-        <li><a href="/events">Events</a></li>
+        <li><a href="/pageants">Pageants</a></li>
         <li><a href="/contestanrs">Contestants</a></li>
         <li><a href="/results">Results</a></li>
         <li><a href="/apply" className={`${!isMobileMenuOpen ? 'btn btn_primary no_margin_right': ''}`}>Apply now</a></li>
