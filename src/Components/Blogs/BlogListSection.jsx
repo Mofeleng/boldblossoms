@@ -84,11 +84,10 @@ const variables = { first };
           ))}
         </div>
         <div className="pagination">
-          <button onClick={handlePrevPage} disabled={currentPage === 1}>
+          <button onClick={handlePrevPage} disabled={currentPage === 1} className='btn btn_primary'>
             Previous
           </button>
-          <span>Page {currentPage}</span>
-          <button onClick={handleNextPage}>Next</button>
+          <button onClick={handleNextPage} className='btn btn_primary'>Next</button>
         </div>
       </div>
     </section>
