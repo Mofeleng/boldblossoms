@@ -9,6 +9,7 @@ import RegisterPage from './Pages/RegisterPage'
 import LoginPage from './Pages/LoginPage'
 import Layout from './Layout'
 import BlogsPage from './Pages/BlogsPage'
+import PageantsPage from './Pages/PageantsPage'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -32,6 +33,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/blogs' element={
           <Layout>
             <BlogsPage />
+          </Layout>
+        } />
+        <Route path='/pageants' element={
+          <Layout>
+            <PageantsPage />
           </Layout>
         } />
     </Routes>
