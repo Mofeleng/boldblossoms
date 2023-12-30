@@ -449,7 +449,17 @@ textarea {
   background-color: var(--bg_secondary);
   
 }
-
+.pagination {
+  padding: 60px 0;
+  text-align: center;
+}
+.pagination button {
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--primary);
+}
 /* Responsiveness */
 
 /* Media Query for Small Screens */
