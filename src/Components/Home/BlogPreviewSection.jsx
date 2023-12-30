@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SectionHeadingTemplate from '../UserInterface/SectionHeadingTemplate'
-import BlogPreviewCard from '../UserInterface/BlogPreviewCard'
+import BlogPreviewCard from '../Blogs/BlogPreviewCard'
 import { gql, GraphQLClient } from 'graphql-request';
 function BlogPreviewSection() {
 

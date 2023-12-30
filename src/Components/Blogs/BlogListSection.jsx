@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import BlogListItemTemplate from '../UserInterface/BlogListItemTemplate';
+import BlogListItemTemplate from './BlogListItemTemplate';
 import { gql, GraphQLClient } from 'graphql-request';
 import useConvertDateToString from '../../Hooks/useConvertDateToString';
 
