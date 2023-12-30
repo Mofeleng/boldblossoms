@@ -458,7 +458,7 @@ textarea {
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: var(--primary);
+  background-color: var(--primary); 
 }
 /* Responsiveness */
 
