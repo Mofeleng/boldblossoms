@@ -322,32 +322,36 @@ textarea {
 .textarea_smaller {
   height: 100px;
 }
-
-
-#footer {
-  background-color: #343434;
-  padding-top: 60px;
-  padding-bottom: 60px;
+.footer {
+  background-color: #333;
   color: #fff;
-  
+  padding: 20px 0;
 }
 
-#footer .container {
-  padding-left: 30px;
-  padding-right: 30px;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer_grid {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  
+.footer-section {
+  flex: 1;
+  margin-bottom: 20px;
 }
 
-.footer_grid input {
-  width: 100% !important;
-  margin: none !important;
+.footer-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #555;
+}
 #solidbg {
   background-color: #3c3c3c;
   height: 100vh;
@@ -526,8 +530,11 @@ textarea {
  .bg_secondary {
     background: #fff;
   }
-  .footer_grid {
-    grid-template-columns: 12fr;
+  .footer-content {
+    display: block;
+  }
+  .footer-content div {
+    margin-bottom: var(--sm);
   }
 }
 

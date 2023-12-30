@@ -2,47 +2,33 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div id="footer" className="footer">
-        <div className="container">
-            <h4 className="heading_smaller text_white">
-                Boldblossoms<span className='text_primary'>.</span>
-            </h4>
-            <div className="footer_grid">
-                <div className="footer_column">
-                    <h4 className='heading_smallest'>Resources</h4>
-                    <ul>
-                    <a href='/'><li>Home</li></a>
-                    <a href="/about"><li>About us</li></a>
-                    <a href="/contestants"><li>Contestents</li></a>
-                    <a href="/events"><li>Events</li></a>
-                    </ul>
-                    <h4 className="heading_smallest">Get involved</h4>
-                    <ul>
-                    <a href='/partners'><li>Sponsorships and Partnerships</li></a>
-                    <a href="/pess kit"><li>Press kit</li></a>
-                    <a href="/contestants"><li>Contestents</li></a>
-                    <a href="/events"><li>Events</li></a>
-                    </ul>
+    <footer className="footer">
+        <div className="container text_centered">
+            <div className="footer-content">
+                <div className="footer-section">
+                <h2 className='heading_smaller'>Contact Us</h2>
+                <p>Email: info@example.com</p>
+                <p>Phone: +1 123 456 7890</p>
+                <p>Phone: </p>
                 </div>
-                <div className="footer_column">
-                    <h4 className='heading_smallest'>More links</h4>
-                    <ul>
-                    <a href="/blogs"><li>Blog</li></a>
-                    <a href="/results"><li>Results</li></a>
-                    </ul>
+                <div className="footer-section">
+                <h2 className='heading_smaller'>Follow Us</h2>
+                <p>Facebook</p>
+                <p>Twitter</p>
+                <p>Instagram</p>
                 </div>
-                <div className="footer_column">
-                    <h4>Join our newsletter</h4>
-                    <div className="newsletter_form text_centered">
-                        <form>
-                            <input type="email" id="email" placeholder='email'/>
-                            <button className="btn btn_primary">Join newsletter</button>
-                        </form>
-                    </div>
+                <div className="footer-section">
+                <h2 className='heading_smaller'>Company</h2>
+                <p>About Us</p>
+                <p>Terms of Service</p>
+                <p>Privacy Policy</p>
                 </div>
             </div>
+            <div className="footer-bottom">
+                <p>&copy; 2023 Bold Blossoms. All rights reserved.</p>
+            </div>
         </div>
-    </div>
+  </footer>
   )
 }
 
