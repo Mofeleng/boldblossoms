@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import BlogListItemTemplate from '../UserInterface/BlogListItemTemplate';
 import { gql, GraphQLClient } from 'graphql-request';
+import useConvertDateToString from '../../Hooks/useConvertDateToString';
+
 
 function BlogListSection() {
   const [blogs, setBlogs] = useState([]);
@@ -39,6 +41,7 @@ const variables = { first };
 
       const response = await graphQLClient.request(query, variables);
       const results = await response.blogs;
+      console.log(results);
       setBlogs(results);
     } catch (error) {
       console.log('Something went wrong', error);
@@ -68,7 +71,16 @@ const variables = { first };
       <div className="container">
         <div className="blog_items">
           {blogs.map((blog) => (
-            <BlogListItemTemplate key={blog.id} />
+            <BlogListItemTemplate key={blog.id}
+              title={blog.title}
+              slug={blog.slug}
+              preview={blog.preview}
+              categories={blog.categories}
+              author={blog.author}
+              publishedAt={useConvertDateToString(blog.publishedAt)}
+              coverPhoto={blog.coverPhoto}
+
+            />
           ))}
         </div>
         <div className="pagination">
