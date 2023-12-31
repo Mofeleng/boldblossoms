@@ -46,7 +46,7 @@ function PageantPage() {
   return (
     <>
     <ImageBackgroundHero img={pageant.coverPhoto} />
-    <PageantInformationSection blog_content={pageant.information} />
+    <PageantInformationSection blog_content={pageant.information} pageantName={pageant.pageantName} />
     </>
   )
 }
