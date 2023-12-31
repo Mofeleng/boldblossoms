@@ -512,6 +512,10 @@ textarea {
   .hamburger-menu {
     display: block;
   }
+  .apply_form input {
+    width: 90%;
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 992px) {
