@@ -10,6 +10,7 @@ import LoginPage from './Pages/LoginPage'
 import Layout from './Layout'
 import BlogsPage from './Pages/BlogsPage'
 import PageantsPage from './Pages/PageantsPage'
+import PageantPage from './Pages/PageantPage'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -40,6 +41,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <PageantsPage />
           </Layout>
         } />
+        <Route path='/pageant/:slug' element={
+          <Layout>
+            <PageantPage />
+          </Layout>
+        } />
+        
     </Routes>
    </BrowserRouter>
   </React.StrictMode>,
