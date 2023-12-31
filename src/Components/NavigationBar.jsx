@@ -20,8 +20,8 @@ const NavigationBar = () => {
         <li><a href="/pageants">Pageants</a></li>
         <li><a href="/contestanrs">Contestants</a></li>
         <li><a href="/results">Results</a></li>
-        <li><a href="/pageant/miss-bold-blossoms-24" className={`${!isMobileMenuOpen ? 'btn btn_primary no_margin_right': ''}`}>Apply now</a></li>
-        <li><a href="/login" className={`${!isMobileMenuOpen ? 'btn btn_accent no_margin_right': ''}`}>Log in</a></li>
+        <li><a href="/pageant/miss-bold-blossoms-24#apply" className={`${!isMobileMenuOpen ? 'btn btn_primary no_margin_right': ''}`}>Apply now</a></li>
+        <li><a href="/contact" className={`${!isMobileMenuOpen ? 'btn btn_accent no_margin_right': ''}`}>Contact us</a></li>
       </ul>
       <div className="hamburger-menu" onClick={handleMobileMenuToggle}>
         <div className={`bar ${isMobileMenuOpen ? 'open' : ''}`}></div>

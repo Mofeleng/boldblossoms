@@ -491,7 +491,7 @@ textarea {
 /* Responsiveness */
 
 /* Media Query for Small Screens */
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 1145px) {
   .nav-links {
     display: none;
     flex-direction: column;
