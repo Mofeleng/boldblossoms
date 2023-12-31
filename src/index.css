@@ -412,6 +412,29 @@ textarea {
 .error {
   background-color: red;
 }
+
+.pageants {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  gap: 10px;
+}
+
+.pageant {
+  border: 1px solid #000;
+  padding: 10px 10px;
+  height: auto;
+}
+
+.pageant .image_cover img {
+  width: 100%;
+
+}
+
+.buttons {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
 /*utility classes*/
 .text_primary {
   color: var(--primary);

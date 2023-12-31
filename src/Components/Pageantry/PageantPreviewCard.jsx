@@ -1,5 +1,4 @@
 import React from 'react'
-import './Pageants.css'
 import { useState, useEffect } from 'react'
 import { gql, GraphQLClient } from 'graphql-request'
 function PageantPreviewCard({ title, coverPhoto, preview, slug}) {

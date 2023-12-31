@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import PageantPreviewCard from './PageantPreviewCard'
-import './Pageants.css'
 import SectionHeadingTemplate from '../UserInterface/SectionHeadingTemplate'
 import { gql, GraphQLClient } from 'graphql-request'
+
 function UpcomingPagentsSection() {
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
     const [ pageants, setPageants ] = useState([]);
