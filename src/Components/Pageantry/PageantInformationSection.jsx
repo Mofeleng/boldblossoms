@@ -11,11 +11,14 @@ function PageantInformationSection({ blog_content, pageantName }) {
     const [pageant, setPageant] = useState(pageantName);
 
     const [ isSuccessful, setIsSuccessful ] = useState(null);
+    const [ isError, setIsError ] = useState(null);
+
     const [nameErr, setNameErr] = useState(null);
     const [emailErr, setEmailErr] = useState(null);
     const [phoneErr, setPhoneErr ] = useState(null);
     const [ageErr, setAgeErr] = useState(null);
 
+    
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
 
     if (!blog_content || !blog_content.html) {
@@ -67,12 +70,24 @@ function PageantInformationSection({ blog_content, pageantName }) {
 
             const response = await graphQLClient.request(mutation, variables);
             const result = await response;
-            console.log(result);
+            setIsError(null);
+            setIsSuccessful(true);
 
         } catch (error) {
-            console.log("Something went wrong: ", error)
+            setIsError("Something went wrong try again.")
+            setIsSuccessful(null)
         }
         
+    }
+
+    const resetFormState = () => {
+        setName("");
+        setEmail("");
+        setPhoneNumber("");
+        setAge("")
+        setIsSuccessful(null);
+        setIsError(null);
+        setIsError(null);
     }
     
   return (
@@ -82,7 +97,8 @@ function PageantInformationSection({ blog_content, pageantName }) {
             </div>
             <div className="content">
                 <h4>Apply now</h4>
-                <div className="form" id='apply'>
+                {!isSuccessful && !isError ? (
+                    <div className="form" id='apply'>
                     <form className='apply_form'>
                         <input type="text"  name='name' placeholder='enter your full name'
                             value={name}
@@ -128,6 +144,19 @@ function PageantInformationSection({ blog_content, pageantName }) {
                         </p>
                     </div>
                 </div>
+                ): <></>}
+
+                { isSuccessful ? (
+                    <div className="form_output_message_container success" onClick={resetFormState}>
+                        <p className="paragraph text_white">Thank you. The form was successfully submited</p>
+                    </div>
+                ): null}
+                { isError ? (
+                    <div className="form_output_message_container error" onClick={resetFormState}>
+                        <p className="paragraph text_white">Something went wrong, please try again later.</p>
+                    </div>
+                ): null}
+                
             </div>
         </div>
     </section>
