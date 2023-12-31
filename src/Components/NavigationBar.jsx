@@ -18,7 +18,7 @@ const NavigationBar = () => {
         <li><a href="/blogs">Blogs</a></li>
         <li><a href="/partners">Partners</a></li>
         <li><a href="/pageants">Pageants</a></li>
-        <li><a href="/contestanrs">Contestants</a></li>
+        <li><a href="/contestants">Contestants</a></li>
         <li><a href="/results">Results</a></li>
         <li><a href="/apply/miss-bold-blossoms-24" className={`${!isMobileMenuOpen ? 'btn btn_primary no_margin_right': ''}`}>Apply now</a></li>
         <li><a href="/contact" className={`${!isMobileMenuOpen ? 'btn btn_accent no_margin_right': ''}`}>Contact us</a></li>
