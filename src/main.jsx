@@ -21,11 +21,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <HomePage />
           </Layout>
         } />
-        <Route path='/apply' element={
-        <Layout>
-          <RegisterPage />
-        </Layout>
-        } />
         <Route path='/login' element={
           <Layout>
             <LoginPage />
@@ -46,7 +41,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <PageantPage />
           </Layout>
         } />
-        
+        <Route path='/apply/:slug' element={
+            <Layout>
+              <RegisterPage />
+            </Layout>
+        } />
+
     </Routes>
    </BrowserRouter>
   </React.StrictMode>,
