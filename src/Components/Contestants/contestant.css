@@ -1,0 +1,34 @@
+.contestants {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    gap: 10px;
+}
+
+.contestant {
+    text-align: center;
+    padding: 15px 10px;
+    
+}
+.contestant p {
+    text-align: start;
+}
+.contestant .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+.contestant img {
+   width: 100px;
+   height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.image_rounded {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
