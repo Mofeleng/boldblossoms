@@ -1,0 +1,23 @@
+#image_bg {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#image_bg img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 46px;
+    font-weight: 200;
+}
+
+.content h4 {
+    font-family: var(--heading_text);
+    font-size: 28px;
+    font-weight: 200;
+    margin: 0;
+}
