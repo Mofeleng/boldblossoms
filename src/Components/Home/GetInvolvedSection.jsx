@@ -19,8 +19,8 @@ function GetInvolvedSection() {
                 text_wrapper_text={`Unleash your inner strength, grace, and beauty on a stage where individuality takes center stage. Embrace the opportunity to become a contestant in the inaugural "Bold Blossoms" pageant, where we celebrate not just what you wear but who you are. Seize the chance to make a statement, inspire others, and be a part of a pageant that values empowerment, diversity, and authenticity. It's time to step into the spotlight and let your unique bloom shine. Apply now and embark on a journey of self-discovery and empowerment.`}
                 is_button={1}
                 button_type={1}
-                button_text={"Apply now"}
-                button_link={"/apply"}
+                button_text={"See our pageants"}
+                button_link={"/pageants"}
                />
                <GridTemplate
                 direction={0}
