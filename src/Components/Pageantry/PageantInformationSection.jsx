@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import useEmailValidation from '../../Hooks/useEmailValidation'
+import { GraphQLClient, gql } from 'graphql-request';
 
 function PageantInformationSection({ blog_content, pageantName }) {
 
@@ -15,11 +16,13 @@ function PageantInformationSection({ blog_content, pageantName }) {
     const [phoneErr, setPhoneErr ] = useState(null);
     const [ageErr, setAgeErr] = useState(null);
 
+    const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
+
     if (!blog_content || !blog_content.html) {
         return null;
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!name) {
             return setNameErr("Please fill in your name");
@@ -36,6 +39,38 @@ function PageantInformationSection({ blog_content, pageantName }) {
 
         if (!useEmailValidation(email)) {
             return setEmailErr("Please fill in a valid email");
+        }
+
+        try {
+            const graphQLClient = new GraphQLClient(ENDPOINT);
+
+            const mutation = gql`
+                mutation MyMutation($name: String!, $email: String!, $pageantAppliedFor: String!, $phone: String!, $age: String!) {
+                    createPageantApplication(
+                        data: {name: $name, email: $email, phoneNumber: $phone, age: $age, pageantAppliedFor: $pageantAppliedFor}
+                    ) {
+                        age
+                        name
+                        phoneNumber
+                        pageantAppliedFor
+                    }
+                    }
+            `;
+
+            const variables = {
+                name,
+                email,
+                pageantAppliedFor: pageantName,
+                phone: phoneNumber,
+                age
+            }
+
+            const response = await graphQLClient.request(mutation, variables);
+            const result = await response;
+            console.log(result);
+
+        } catch (error) {
+            console.log("Something went wrong: ", error)
         }
         
     }
