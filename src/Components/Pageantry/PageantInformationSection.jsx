@@ -44,11 +44,10 @@ function PageantInformationSection({ blog_content, pageantName }) {
     <section id="info">
         <div className="container">
             <div className="content" dangerouslySetInnerHTML={{ __html: blog_content.html }}>
-              
             </div>
             <div className="content">
                 <h4>Apply now</h4>
-                <div className="form">
+                <div className="form" id='apply'>
                     <form className='apply_form'>
                         <input type="text"  name='name' placeholder='enter your full name'
                             value={name}
