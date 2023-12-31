@@ -11,6 +11,7 @@ import Layout from './Layout'
 import BlogsPage from './Pages/BlogsPage'
 import PageantsPage from './Pages/PageantsPage'
 import PageantPage from './Pages/PageantPage'
+import ContestantsPage from './Pages/ContestantsPage'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -46,7 +47,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <RegisterPage />
             </Layout>
         } />
-
+        <Route path='/contestants' element={
+          <Layout>
+            <ContestantsPage />
+          </Layout>
+        } />
     </Routes>
    </BrowserRouter>
   </React.StrictMode>,
