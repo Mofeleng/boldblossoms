@@ -2,7 +2,15 @@ import React from 'react'
 import './contestant.css'
 
 function ContestantItem( { profilePicture, fullName, bio, rank, pageant, contestantId }) {
-    console.log( profilePicture, fullName, bio, rank, pageant, contestantId)
+
+    const copyToClickBoard = (e) => {
+        e.preventDefault();
+        const pageantLink = `http://localhost:5173/contestant/${contestantId}`
+
+        navigator.clipboard.writeText(pageantLink)
+        .then(() => alert("Copied link to clipboard"))
+        .catch((err) => alert("Something went wrong: ", err))
+    }
   return (
     <a href={`/contestant/${contestantId}`}>
         <div className="contestant">
@@ -18,7 +26,7 @@ function ContestantItem( { profilePicture, fullName, bio, rank, pageant, contest
                 <b>Pageant: { pageant.pageantName }</b>
                 <div className="buttons">
                     <a href="/contestant" className='btn btn_primary'>Vote</a>
-                    <a href="" className='btn btn_accent btn_border_black'>Share link</a>
+                    <button onClick={copyToClickBoard} className='btn btn_accent btn_border_black'>Share link</button>
                 </div>
             </div>
         </div>

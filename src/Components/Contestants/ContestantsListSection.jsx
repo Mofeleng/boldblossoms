@@ -15,6 +15,7 @@ function ContestantsListSection() {
           const query = gql`
            query FetchContestants {
             contestants {
+              id
               pageant {
                 pageantName
               }
@@ -52,7 +53,7 @@ function ContestantsListSection() {
                     fullName={contestant.fullName}
                     bio={contestant.bio}
                     rank={contestant.rank}  
-                    contestantId={contestant.contestantNumber}
+                    contestantId={contestant.id}
                     pageant={contestant.pageant}                
                   />
                 ))}
