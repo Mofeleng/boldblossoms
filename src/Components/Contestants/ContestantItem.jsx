@@ -17,8 +17,8 @@ function ContestantItem( { profilePicture, fullName, bio, rank, pageant, contest
                 <b>Rank: { rank }</b><br />
                 <b>Pageant: { pageant.pageantName }</b>
                 <div className="buttons">
-                    <a href="/contestant" className='btn btn_primary'>See More</a>
-                    <a href="" className='btn btn_accent btn_border_black'>Vote</a>
+                    <a href="/contestant" className='btn btn_primary'>Vote</a>
+                    <a href="" className='btn btn_accent btn_border_black'>Share link</a>
                 </div>
             </div>
         </div>
