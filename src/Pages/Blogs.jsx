@@ -2,7 +2,7 @@ import React from 'react'
 import SolidBGHeroTemplate from '../Components/UserInterface/SolidBGHeroTemplate'
 import BlogListSection from '../Components/Blogs/BlogListSection'
 
-function BlogsPage() {
+function Blogs() {
   return (
     <>
         <SolidBGHeroTemplate
@@ -15,4 +15,4 @@ function BlogsPage() {
   )
 }
 
-export default BlogsPage
+export default Blogs

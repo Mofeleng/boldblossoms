@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import ImageBackgroundHero from '../Components/Pageantry/ImageBackgroundHero';
 import PageantInformationSection from '../Components/Pageantry/PageantInformationSection';
 
-function PageantPage() {
+function Pageant() {
 
     const { slug } = useParams();
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
@@ -51,4 +51,4 @@ function PageantPage() {
   )
 }
 
-export default PageantPage
+export default Pageant

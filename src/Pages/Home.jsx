@@ -7,7 +7,7 @@ import ContactSection from '../Components/Home/ContactSection';
 import BlogPreviewSection from '../Components/Home/BlogPreviewSection';
 import Footer from '../Components/Footer';
 
-function HomePage() {
+function Home() {
   return (
     <>
         <HeroSection />
@@ -19,4 +19,4 @@ function HomePage() {
   )
 }
 
-export default HomePage;
+export default Home;

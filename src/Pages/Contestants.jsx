@@ -2,7 +2,7 @@ import React from 'react'
 import SolidBGHeroTemplate from '../Components/UserInterface/SolidBGHeroTemplate'
 import ContestantsListSection from '../Components/Contestants/ContestantsListSection'
 
-function ContestantsPage() {
+function Contestants() {
   return (
     <>
     <SolidBGHeroTemplate
@@ -16,4 +16,4 @@ function ContestantsPage() {
   )
 }
 
-export default ContestantsPage
+export default Contestants

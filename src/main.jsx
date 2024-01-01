@@ -4,14 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import NavigationBar from './Components/NavigationBar'
 import Footer from './Components/Footer'
-import HomePage from './Pages/HomePage'
-import RegisterPage from './Pages/RegisterPage'
-import LoginPage from './Pages/LoginPage'
+import Home from './Pages/Home'
+import Register from './Pages/Register'
 import Layout from './Layout'
-import BlogsPage from './Pages/BlogsPage'
-import PageantsPage from './Pages/PageantsPage'
-import PageantPage from './Pages/PageantPage'
-import ContestantsPage from './Pages/ContestantsPage'
+import Blogs from './Pages/Blogs'
+import Pageants from './Pages/Pageants'
+import Pageant from './Pages/Pageant'
+import Contestants from './Pages/Contestants'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,37 +18,32 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Routes>
         <Route path='/' element={
           <Layout>
-            <HomePage />
-          </Layout>
-        } />
-        <Route path='/login' element={
-          <Layout>
-            <LoginPage />
+            <Home />
           </Layout>
         } />
         <Route path='/blogs' element={
           <Layout>
-            <BlogsPage />
+            <Blogs />
           </Layout>
         } />
         <Route path='/pageants' element={
           <Layout>
-            <PageantsPage />
+            <Pageants />
           </Layout>
         } />
         <Route path='/pageant/:slug' element={
           <Layout>
-            <PageantPage />
+            <Pageant />
           </Layout>
         } />
         <Route path='/apply/:slug' element={
             <Layout>
-              <RegisterPage />
+              <Register />
             </Layout>
         } />
         <Route path='/contestants' element={
           <Layout>
-            <ContestantsPage />
+            <Contestants />
           </Layout>
         } />
     </Routes>

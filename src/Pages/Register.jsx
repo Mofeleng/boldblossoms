@@ -7,7 +7,7 @@ import ApplicationForm from '../Components/Pageantry/ApplicationForm';
 import { useParams } from 'react-router-dom';
 
 
-function RegisterPage() {
+function Register() {
   const { slug } = useParams();
   return (
     <>
@@ -29,4 +29,4 @@ function RegisterPage() {
   )
 }
 
-export default RegisterPage
+export default Register

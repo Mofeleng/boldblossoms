@@ -2,7 +2,7 @@ import React from 'react'
 import SolidBGHeroTemplate from '../Components/UserInterface/SolidBGHeroTemplate'
 import UpcomingPagentsSection from '../Components/Pageantry/UpcomingPagentsSection'
 
-function PageantsPage() {
+function Pageants() {
   return (
     <>
         <SolidBGHeroTemplate
@@ -16,4 +16,4 @@ function PageantsPage() {
   )
 }
 
-export default PageantsPage
+export default Pageants
