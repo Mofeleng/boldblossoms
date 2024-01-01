@@ -7,11 +7,10 @@
 .contestant {
     text-align: center;
     padding: 15px 10px;
+    border: 1px solid black;
     
 }
-.contestant p {
-    text-align: start;
-}
+
 .contestant .buttons {
     display: flex;
     flex-direction: row;
