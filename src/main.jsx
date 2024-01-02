@@ -11,6 +11,7 @@ import Blogs from './Pages/Blogs'
 import Pageants from './Pages/Pageants'
 import Pageant from './Pages/Pageant'
 import Contestants from './Pages/Contestants'
+import Contestant from './Pages/Contestant'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -44,6 +45,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/contestants' element={
           <Layout>
             <Contestants />
+          </Layout>
+        } />
+
+        <Route path='/contestant/:id' element={
+          <Layout>
+            <Contestant />
           </Layout>
         } />
     </Routes>

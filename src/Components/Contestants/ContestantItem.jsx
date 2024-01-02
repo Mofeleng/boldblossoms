@@ -25,7 +25,7 @@ function ContestantItem( { profilePicture, fullName, bio, rank, pageant, contest
                 <b>Rank: { rank }</b><br />
                 <b>Pageant: { pageant.pageantName }</b>
                 <div className="buttons">
-                    <a href="/contestant" className='btn btn_primary'>Vote</a>
+                    <a href={`/contestant/${contestantId}`} className='btn btn_primary'>Vote</a>
                     <button onClick={copyToClickBoard} className='btn btn_accent btn_border_black'>Share link</button>
                 </div>
             </div>
