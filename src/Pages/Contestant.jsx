@@ -8,6 +8,9 @@ function Contestant() {
     const { id } = useParams();
 
     const [ contestant, setContestant ] = useState([]);
+    const [ votes, setVotes ] = useState(1);
+    const [ totalCost, setTotalCost ] = useState(2);
+
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
 
     const fetchContestant = async () => {
@@ -49,6 +52,23 @@ function Contestant() {
 
     useEffect(() => {fetchContestant()}, [])
 
+    const calculateTotalCost = (x) => {
+    const costPerHundredVotes = 1; // R1 per vote for every 100 votes
+    const costPerVoteBelowHundred = 2; // R2 per vote for votes fewer than 100
+
+    const hundredVotesMultiplier = Math.floor(x / 100); // Full 100-vote blocks
+    const remainderVotes = x % 100; // Votes remaining after accounting for 100-vote blocks
+
+    const totalCost =
+        costPerHundredVotes * hundredVotesMultiplier * 100 +
+        costPerVoteBelowHundred * remainderVotes;
+
+    return totalCost;
+    };
+
+    const sendVotePaymentRequest = () => {
+
+    }
     if (!contestant || contestant.length == 0) {
         return "Something went wrong"
     }
@@ -81,8 +101,20 @@ function Contestant() {
                     <h4 className="heading_small">How to vote</h4>
                     
                     <h5 className="heading_smaller">1. Vote here</h5>
-                    <div className="voting_container">
-
+                    <div className="voting_container apply_form">
+                        <p className="paragraph">
+                            1 vote costs R2<br/>
+                            R1 per 100 votes <br/>
+                        </p>
+                        <span className='paragraph'>Costs: R{ totalCost }</span>
+                        <input type="number" className="votes_num" placeholder='Number of votes' 
+                            value={votes}
+                            onChange={(e) => {
+                                setVotes(e.target.value)
+                                setTotalCost(calculateTotalCost(e.target.value))
+                            }}
+                        />
+                        <button className='btn btn_primary' onClick={sendVotePaymentRequest}>Vote</button>
                     </div>
                     <h5 className="heading_smaller">2. SMS</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem mollitia voluptatibus illo laborum iste itaque vitae nam atque eaque? Vitae optio facere ipsum aperiam quasi, assumenda laborum distinctio. Alias, culpa.</p>
