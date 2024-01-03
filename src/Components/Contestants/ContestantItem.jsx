@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 import './contestant.css'
 
 function ContestantItem( { profilePicture, fullName, bio, rank, pageant, contestantId }) {
@@ -12,7 +14,7 @@ function ContestantItem( { profilePicture, fullName, bio, rank, pageant, contest
         .catch((err) => alert("Something went wrong: ", err))
     }
   return (
-    <a href={`/contestant/${contestantId}`}>
+    <Link to={`/contestant/${contestantId}`}>
         <div className="contestant">
             <div className="image_rounded">
                 <img src={profilePicture.url} alt="" />
@@ -25,12 +27,12 @@ function ContestantItem( { profilePicture, fullName, bio, rank, pageant, contest
                 <b>Rank: { rank }</b><br />
                 <b>Pageant: { pageant.pageantName }</b>
                 <div className="buttons">
-                    <a href={`/contestant/${contestantId}`} className='btn btn_primary'>Vote</a>
+                    <Link to={`/contestant/${contestantId}`} className='btn btn_primary'>Vote</Link>
                     <button onClick={copyToClickBoard} className='btn btn_accent btn_border_black'>Share link</button>
                 </div>
             </div>
         </div>
-    </a>
+    </Link>
   )
 }
 
