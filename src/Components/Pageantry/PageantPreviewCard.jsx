@@ -13,8 +13,8 @@ function PageantPreviewCard({ title, coverPhoto, preview, slug}) {
                 { preview }
             </p>
             <div className="buttons">
-                <a href={`/apply/${slug}`} className='btn btn_primary'>Apply now</a>
-                <a href={`/pageant/${slug}`} className='btn btn_accent btn_border_black'>Learn More</a>
+                <Link to={`/apply/${slug}`} className='btn btn_primary'>Apply now</Link>
+                <Link to={`/pageant/${slug}`} className='btn btn_accent btn_border_black'>Learn More</Link>
             </div>
             
         </div>
