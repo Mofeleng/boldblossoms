@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 function GridTemplate({ direction, text_wrapper_heading, text_wrapper_text, img_src_classname, is_button, button_text, button_type, button_link}) {
     /***************
