@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { gql, GraphQLClient } from 'graphql-request'
+import { Link } from 'react-router-dom'
+
 function PageantPreviewCard({ title, coverPhoto, preview, slug}) {
   return (
     <div className="pageant">
