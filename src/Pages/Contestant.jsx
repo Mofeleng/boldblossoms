@@ -1,17 +1,20 @@
 import { GraphQLClient, gql } from 'graphql-request';
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Contestant() {
 
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [ contestant, setContestant ] = useState([]);
     const [ votes, setVotes ] = useState(1);
     const [ totalCost, setTotalCost ] = useState(2);
 
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
+    const YOCO_URL = import.meta.env.VITE_YOCO_CHECKOUT_URL;
 
     const fetchContestant = async () => {
         try {
@@ -66,8 +69,54 @@ function Contestant() {
     return totalCost;
     };
 
-    const sendVotePaymentRequest = () => {
+    const OrderStatusChecker = () => {
+        const [orderStatus, setOrderStatus] = useState('pending');
+      
+        const checkOrderStatus = async () => {
+            const ORDER_STATUS_URL = import.meta.env.VITE_YOCO_CHECK_STATUS;
+          try {
+            const response = await axios.get(ORDER_STATUS_URL);
+            setOrderStatus(response.data.orderStatus);
+          } catch (error) {
+            console.error('Error checking order status:', error.message);
+          }
+        };
 
+        useEffect(() => {
+            const intervalId = setInterval(checkOrderStatus, 5000); // Check every 5 seconds (adjust as needed)
+    
+        // Clean up the interval when the component unmounts
+        return () => clearInterval(intervalId);
+        }, []);
+    }
+
+    OrderStatusChecker();
+
+    
+    const sendVotePaymentRequest = async () => {
+        try {
+            const sendPostRequest = await axios.post(YOCO_URL,
+                {
+                    cost: totalCost * 100
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }
+            );
+    
+            console.log("Server response: ", sendPostRequest.data);
+    
+            const redirectUrl = sendPostRequest.data.redirectUrl;
+    
+            if (redirectUrl) {
+                window.location.href = redirectUrl;
+            }
+        } catch (error) {
+            console.log("Something went wrong: ", error);
+        }
+        
     }
     if (!contestant || contestant.length == 0) {
         return "Something went wrong"
@@ -127,4 +176,4 @@ function Contestant() {
   )
 }
 
-export default Contestant
+export default Contestant;
