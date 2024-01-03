@@ -15,13 +15,13 @@ const NavigationBar = () => {
         <h2 className="heading_smaller">Boldblossoms<span className="text_primary">.</span></h2>
       </div>
       <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-        <li><a href="/blogs">Blogs</a></li>
-        <li><a href="/partners">Partners</a></li>
-        <li><a href="/pageants">Pageants</a></li>
-        <li><a href="/contestants">Contestants</a></li>
-        <li><a href="/results">Results</a></li>
-        <li><a href="/apply/miss-bold-blossoms-24" className={`${!isMobileMenuOpen ? 'btn btn_primary no_margin_right': ''}`}>Apply now</a></li>
-        <li><a href="/contact" className={`${!isMobileMenuOpen ? 'btn btn_accent no_margin_right': ''}`}>Contact us</a></li>
+        <li><Link to="/blogs">Blogs</Link></li>
+        <li><Link to="/partners">Partners</Link></li>
+        <li><Link to="/pageants">Pageants</Link></li>
+        <li><Link to="/contestants">Contestants</Link></li>
+        <li><Link to="/results">Results</Link></li>
+        <li><Link to="/apply/miss-bold-blossoms-24" className={`${!isMobileMenuOpen ? 'btn btn_primary no_margin_right': ''}`}>Apply now</Link></li>
+        <li><Link to="/contact" className={`${!isMobileMenuOpen ? 'btn btn_accent no_margin_right': ''}`}>Contact us</Link></li>
       </ul>
       <div className="hamburger-menu" onClick={handleMobileMenuToggle}>
         <div className={`bar ${isMobileMenuOpen ? 'open' : ''}`}></div>
