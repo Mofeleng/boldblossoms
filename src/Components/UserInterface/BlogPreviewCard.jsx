@@ -5,7 +5,7 @@ function BlogPreviewCard({ categories, title, slug, preview, author, published }
   let i = categories.length;
 
   return (
-    <a href={`/blog/${slug}`}>
+    <Link to={`/blog/${slug}`}>
       <div className="blog_preview_card text_start">
           <span className='label'>
             {categories.map(category => {
@@ -18,7 +18,7 @@ function BlogPreviewCard({ categories, title, slug, preview, author, published }
           </p>
           <span className="label text_black">{ author } - {useConvertDateToString(published)}</span>
       </div>
-    </a>
+    </Link>
   )
 }
 

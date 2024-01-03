@@ -25,7 +25,7 @@ function GridTemplate({ direction, text_wrapper_heading, text_wrapper_text, img_
                     {text_wrapper_text}
                 </p>
                 {is_button ? (
-                    <a href={button_link} className={buttonClassnames}>{button_text}</a>
+                    <Link to={button_link} className={buttonClassnames}>{button_text}</Link>
                 ):(null)}
             </div>
             <div className={img_src_classname} id="image_wrapper">
@@ -43,7 +43,7 @@ function GridTemplate({ direction, text_wrapper_heading, text_wrapper_text, img_
                     {text_wrapper_text}
                 </p>
                 {is_button ? (
-                    <a href={button_link} className={buttonClassnames}>{button_text}</a>
+                    <Link to={button_link} className={buttonClassnames}>{button_text}</Link>
                 ):(null)}
             </div>
         </div>
