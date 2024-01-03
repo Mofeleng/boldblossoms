@@ -4,7 +4,7 @@ import useConvertDateToString from '../../Hooks/useConvertDateToString';
 function BlogListItemTemplate({ slug, title, preview, categories, author, coverPhoto, publishedAt}) {
 
   return (
-    <a href={`/blog/${slug}`}>
+    <Link to={`/blog/${slug}`}>
         <div className="blog_item">
                 <div className="image_blog_wrapper">
                     <img src={coverPhoto.url} width={250} height={250}/>
@@ -22,7 +22,7 @@ function BlogListItemTemplate({ slug, title, preview, categories, author, coverP
                     <span className="label text_black">{author.authorName} - {publishedAt}</span>
                 </div>
         </div>
-    </a>
+    </Link>
   )
 }
 
