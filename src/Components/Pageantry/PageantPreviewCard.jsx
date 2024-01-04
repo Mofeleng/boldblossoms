@@ -20,7 +20,7 @@ function PageantPreviewCard({ title, coverPhoto, preview, slug}) {
             </div>
             
         </div>
-    </div>
+    </div>   
   )
 }
 
