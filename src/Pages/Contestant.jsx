@@ -2,6 +2,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
+import useCalculateTotalCost from '../Hooks/useCalculateTotalCost';
 import axios from 'axios';
 
 function Contestant() {
@@ -54,20 +55,6 @@ function Contestant() {
     }
 
     useEffect(() => {fetchContestant()}, [])
-
-    const calculateTotalCost = (x) => {
-    const costPerHundredVotes = 1; // R1 per vote for every 100 votes
-    const costPerVoteBelowHundred = 2; // R2 per vote for votes fewer than 100
-
-    const hundredVotesMultiplier = Math.floor(x / 100); // Full 100-vote blocks
-    const remainderVotes = x % 100; // Votes remaining after accounting for 100-vote blocks
-
-    const totalCost =
-        costPerHundredVotes * hundredVotesMultiplier * 100 +
-        costPerVoteBelowHundred * remainderVotes;
-
-    return totalCost;
-    };
 
     const OrderStatusChecker = () => {
         const [orderStatus, setOrderStatus] = useState('pending');
@@ -162,7 +149,7 @@ function Contestant() {
                             value={votes}
                             onChange={(e) => {
                                 setVotes(e.target.value)
-                                setTotalCost(calculateTotalCost(e.target.value))
+                                setTotalCost(useCalculateTotalCost(e.target.value))
                             }}
                         />
                         <button className='btn btn_primary' onClick={sendVotePaymentRequest}>Vote</button>
