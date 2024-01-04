@@ -533,6 +533,22 @@ textarea {
   }
 }
 
+@media screen and (max-width: 845px) {
+  .blog_item {
+    display: block;
+  }
+  .blog_item img {
+    width: 100%;
+  }
+  .blog_item .blog_info {
+    margin-top: var(--sm);
+  }
+  .blog_item:hover {
+    background-color: transparent;
+    background: transparent;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .hero {
     justify-content: center;
