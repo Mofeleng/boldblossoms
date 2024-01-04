@@ -52,8 +52,17 @@ function Contestant() {
             console.log("Error here!: ", error)
         }
     }
+    let counter = 0;
+    useEffect(() => {
+        if (counter == 0) {
+            fetchContestant();
+            counter = counter + 1;
 
-    useEffect(() => {fetchContestant()}, [])
+        } else {
+            console.log("Function already ran")
+        }
+        
+    }, [])
     
     const sendVotePaymentRequest = async () => {
         try {
