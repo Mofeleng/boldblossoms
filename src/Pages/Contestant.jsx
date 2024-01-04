@@ -97,7 +97,9 @@ function Contestant() {
         try {
             const sendPostRequest = await axios.post(YOCO_URL,
                 {
-                    cost: totalCost * 100
+                    cost: totalCost * 100,
+                    votes: votes,
+                    contestantId: contestant.id
                 },
                 {
                     headers: {
