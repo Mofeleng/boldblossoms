@@ -13,6 +13,7 @@ function Contestant() {
     const [ contestant, setContestant ] = useState([]);
     const [ votes, setVotes ] = useState(1);
     const [ totalCost, setTotalCost ] = useState(2);
+    const [ buttonState, setButtonState ] = useState("Vote");
 
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
     const YOCO_URL = import.meta.env.VITE_YOCO_CHECKOUT_URL;
@@ -65,6 +66,7 @@ function Contestant() {
     }, [])
     
     const sendVotePaymentRequest = async () => {
+        setButtonState("Please wait...")
         try {
             const sendPostRequest = await axios.post(YOCO_URL,
                 {
@@ -136,7 +138,7 @@ function Contestant() {
                                 setTotalCost(useCalculateTotalCost(e.target.value))
                             }}
                         />
-                        <button className='btn btn_primary' onClick={sendVotePaymentRequest}>Vote</button>
+                        <button className='btn btn_primary' onClick={sendVotePaymentRequest}>{buttonState}</button>
                     </div>
                     <h5 className="heading_smaller">2. SMS</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem mollitia voluptatibus illo laborum iste itaque vitae nam atque eaque? Vitae optio facere ipsum aperiam quasi, assumenda laborum distinctio. Alias, culpa.</p>
