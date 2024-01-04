@@ -46,7 +46,6 @@ function Contestant() {
 
             const response = await graphQLClient.request(query, variables);
             const results = await response;
-            console.log("A: ", results.contestant, "B: ", results)
             setContestant(results.contestant);
             
         } catch (error) {
@@ -55,30 +54,6 @@ function Contestant() {
     }
 
     useEffect(() => {fetchContestant()}, [])
-
-    const OrderStatusChecker = () => {
-        const [orderStatus, setOrderStatus] = useState('pending');
-      
-        const checkOrderStatus = async () => {
-            const ORDER_STATUS_URL = import.meta.env.VITE_YOCO_CHECK_STATUS;
-          try {
-            const response = await axios.get(ORDER_STATUS_URL);
-            setOrderStatus(response.data.orderStatus);
-          } catch (error) {
-            console.error('Error checking order status:', error.message);
-          }
-        };
-
-        useEffect(() => {
-            const intervalId = setInterval(checkOrderStatus, 5000); // Check every 5 seconds (adjust as needed)
-    
-        // Clean up the interval when the component unmounts
-        return () => clearInterval(intervalId);
-        }, []);
-    }
-
-    OrderStatusChecker();
-
     
     const sendVotePaymentRequest = async () => {
         try {
