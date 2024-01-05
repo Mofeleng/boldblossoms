@@ -537,6 +537,17 @@ textarea {
   }
 }
 
+.inputs {
+  background-color: white;
+  padding: 5px 10px;
+}
+.inputs input {
+  width: 70%;
+  display: inline;
+  height: 40px;
+  margin-right: 20px;
+}
+
 @media screen and (max-width: 992px) {
   .hero {
     justify-content: center;

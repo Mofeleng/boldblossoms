@@ -131,14 +131,17 @@ function Contestant() {
                             R1 per 100 votes <br/>
                         </p>
                         <span className='paragraph'>Costs: R{ totalCost }</span>
-                        <input type="number" className="votes_num" placeholder='Number of votes' 
-                            value={votes}
-                            onChange={(e) => {
-                                setVotes(e.target.value)
-                                setTotalCost(useCalculateTotalCost(e.target.value))
-                            }}
-                        />
-                        <button className='btn btn_primary' onClick={sendVotePaymentRequest}>{buttonState}</button>
+                        <div className="inputs">
+                            <input type="number" className="votes_num" placeholder='Number of votes' 
+                                value={votes}
+                                onChange={(e) => {
+                                    setVotes(e.target.value)
+                                    setTotalCost(useCalculateTotalCost(e.target.value))
+                                }}
+                            />
+                            <button className='btn btn_primary' onClick={sendVotePaymentRequest}>{buttonState}</button>
+                        </div>
+                        
                     </div>
                     <h5 className="heading_smaller">2. SMS</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem mollitia voluptatibus illo laborum iste itaque vitae nam atque eaque? Vitae optio facere ipsum aperiam quasi, assumenda laborum distinctio. Alias, culpa.</p>
