@@ -57,6 +57,10 @@ function Blog() {
         }
     }, []);
 
+    if (!blog || blog.length < 1) {
+        return `Could not return Blog: ${blog}`
+    } 
+
   return (
     <>
     <section id="blog_content">
