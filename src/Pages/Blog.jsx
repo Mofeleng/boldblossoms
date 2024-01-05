@@ -11,8 +11,8 @@ function Blog() {
 
     const fetchBlog = async () => {
         const graphqlClient = new GraphQLClient(ENDPOINT);
-
-        const fetchBlog = gql`
+        try {
+            const fetchBlog = gql`
             query fetchBlog($slug: String!) {
                 blog( where: { slug: $slug }) {
                     coverPhoto {
@@ -36,12 +36,16 @@ function Blog() {
             slug
         }
 
-        const response = await graphqlClient(fetchBlog, variables);
+        const response = await graphqlClient.request(fetchBlog, variables);
         const res = await response;
-        console.log(res);
+
         if (res.blog) {
             setBlog(res.blog)
         }
+        } catch (error) {
+            
+        }
+        
 
     }
     let runner = 0;
