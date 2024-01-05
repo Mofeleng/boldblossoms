@@ -450,6 +450,37 @@ textarea {
   height: 90vh;
   object-fit: cover;
 }
+
+.blog_grid {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.blog .blog_cover_photo img{
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  border-radius: 30px;
+  margin-top: var(--sm);
+  margin-bottom: var(--sm);
+}
+
+.blog_text h3 {
+  font-size: 26px;
+  font-weight: 200;
+  margin: 0;
+}
+.blog_text img{
+  width: 100% !important;
+  height: 80vh;
+  object-fit: cover;
+  
+}
+
+.small_line {
+  width: 100%;
+  height: 1px;
+  background: #000;
+}
 /*utility classes*/
 .text_primary {
   color: var(--primary);
@@ -628,6 +659,12 @@ textarea {
   }
   .partners {
     grid-template-columns: 4fr 4fr 4fr;
+  }
+  .blog_grid {
+    grid-template-columns: 100%;
+  }
+  .blog_grid .ads {
+    display: none;
   }
 }
 

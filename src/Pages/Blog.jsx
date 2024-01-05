@@ -61,14 +61,28 @@ function Blog() {
     <>
     <section id="blog_content">
         <div className="container">
-            <div className="blog">
-                <div className="blog_cover_photo">
-                    <img src="" alt="Blog cover image" />
-                </div>
+            <div className="blog_grid">
                 <div className="blog">
+                    <div className="intro_info">
+                        <span className="label">{blog.categories.map((category) => (
+                            category.categoryName + " "
+                        ))}</span>
+                        <h3 className="heading_small">{blog.title}</h3>
+                        <span>By { blog.author.authorName } </span>
+                    </div>
+
+                    <div className="blog_cover_photo">
+                        <img src={blog.coverPhoto.url} alt="Blog cover image" />
+                    </div>
+                    <div className="blog_text" dangerouslySetInnerHTML={{ __html: blog.content.html }}>
+
+                    </div>
+                </div>
+                <div className="ads">
 
                 </div>
             </div>
+            
         </div>
     </section>
     </>
