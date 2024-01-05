@@ -13,7 +13,7 @@ const NavigationBar = () => {
       <div className="container">
       <nav className="navbar">
       <div className="logo">
-        <h2 className="heading_smaller">Boldblossoms<span className="text_primary">.</span></h2>
+        <Link to='/'><h2 className="heading_smaller">Boldblossoms<span className="text_primary">.</span></h2></Link>
       </div>
       <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
         <li><Link to="/blogs">Blogs</Link></li>
