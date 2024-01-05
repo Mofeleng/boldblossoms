@@ -14,6 +14,7 @@ import Contestants from './Pages/Contestants'
 import Contestant from './Pages/Contestant'
 import Partners from './Pages/Partners'
 import Contact from './Pages/Contact'
+import Blog from './Pages/Blog'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -65,6 +66,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/contact' element={
           <Layout>
             <Contact />
+          </Layout>
+        } />
+
+        <Route path='/blog/:slug' element={
+          <Layout>
+            <Blog />
           </Layout>
         } />
     </Routes>
