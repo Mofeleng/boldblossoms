@@ -548,6 +548,17 @@ textarea {
   margin-right: 20px;
 }
 
+.partners {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 3fr;
+
+}
+.partner img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+
 @media screen and (max-width: 992px) {
   .hero {
     justify-content: center;
