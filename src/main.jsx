@@ -13,6 +13,7 @@ import Pageant from './Pages/Pageant'
 import Contestants from './Pages/Contestants'
 import Contestant from './Pages/Contestant'
 import Partners from './Pages/Partners'
+import Contact from './Pages/Contact'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -59,6 +60,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Layout>
               <Partners />
             </Layout>
+        } />
+
+        <Route path='/contact' element={
+          <Layout>
+            <Contact />
+          </Layout>
         } />
     </Routes>
    </BrowserRouter>
