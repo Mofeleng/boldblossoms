@@ -626,6 +626,9 @@ textarea {
   .pageants {
     grid-template-columns: 12fr;
   }
+  .partners {
+    grid-template-columns: 4fr 4fr 4fr;
+  }
 }
 
 @media screen and (max-width: 590px) {
@@ -665,7 +668,9 @@ textarea {
     margin-left: 0;
     margin-right: 10%;
     margin-bottom: var(--sm_gap);
-
+  }
+  .partners {
+    grid-template-columns: 6fr 6fr;
   }
 }
 
@@ -681,5 +686,8 @@ textarea {
   .pageant .buttons {
     padding-left: 0;
     padding-right: 6%;
+  }
+  .partners {
+    grid-template-columns: 12fr;
   }
 }
