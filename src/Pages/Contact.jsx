@@ -12,7 +12,7 @@ function Contact() {
         />
 
         <section id="contact_form">
-            <div className="container">
+            <div className="container text_centered">
                 <h4 className="heading_smaller">Contact us</h4>
                 <ContactForm />
             </div>
