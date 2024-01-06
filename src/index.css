@@ -665,6 +665,12 @@ textarea {
   .partners {
     grid-template-columns: 4fr 4fr 4fr;
   }
+  .contestants {
+      grid-template-columns: 6fr 6fr;    
+  }
+  .results {
+      grid-template-columns: 6fr 6fr;
+  }
   .blog_grid {
     grid-template-columns: 100%;
   }
@@ -714,6 +720,12 @@ textarea {
   .partners {
     grid-template-columns: 6fr 6fr;
   }
+  .contestants {
+    grid-template-columns: 12fr;    
+}
+.results {
+    grid-template-columns: 12fr;
+}
 }
 
 @media screen and (max-width: 420px) {

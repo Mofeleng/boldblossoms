@@ -74,7 +74,8 @@ function Results() {
                                 <p className="paragraph">
                                     {winner.description}
                                 </p>
-                                <b>Pageant: {winner.pageant.pageantName}</b>
+                                <b>Pageant: {winner.pageant.pageantName}</b><br/>
+                                <b>Year: { winner.year }</b>
                             </div>
                         </div>
                     ))}
