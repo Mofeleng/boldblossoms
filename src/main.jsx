@@ -14,6 +14,7 @@ import Contestants from './Pages/Contestants'
 import Contestant from './Pages/Contestant'
 import Partners from './Pages/Partners'
 import Contact from './Pages/Contact'
+import Results from './Pages/Results'
 import Blog from './Pages/Blog'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
