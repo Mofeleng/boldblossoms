@@ -74,6 +74,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Blog />
           </Layout>
         } />
+
+        <Route path='/results' element={
+          <Layout>
+            <Results />
+          </Layout>
+        } />
     </Routes>
    </BrowserRouter>
   </React.StrictMode>,
