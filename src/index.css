@@ -666,7 +666,7 @@ textarea {
     grid-template-columns: 4fr 4fr 4fr;
   }
   .contestants {
-      grid-template-columns: 6fr 6fr;    
+      grid-template-columns: 6fr 6fr !important;    
   }
   .results {
       grid-template-columns: 6fr 6fr;
@@ -697,6 +697,9 @@ textarea {
     display: block;
     margin-bottom: var(--md_gap);
   }
+  .contestants {
+    grid-template-columns: 12fr !important;    
+}
   .heading {
     font-size: 36px;
   }
@@ -720,9 +723,7 @@ textarea {
   .partners {
     grid-template-columns: 6fr 6fr;
   }
-  .contestants {
-    grid-template-columns: 12fr;    
-}
+  
 .results {
     grid-template-columns: 12fr;
 }
