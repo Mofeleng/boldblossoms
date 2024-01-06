@@ -449,6 +449,7 @@ textarea {
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  object-position: center 35%;
 }
 
 .blog_grid {
@@ -676,6 +677,11 @@ textarea {
   }
   .blog_grid .ads {
     display: none;
+  }
+
+  .contestant_info {
+    width: 100%;
+    margin: 0;
   }
 }
 
