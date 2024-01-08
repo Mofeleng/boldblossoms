@@ -44,7 +44,7 @@ function Pageant() {
         setIsLoading(0);
         setError(null);
       } catch (error) {
-        setError("Something went wrong while fetching this contestant");
+        setError("Something went wrong while fetching this pageant");
         setIsLoading(0);
       }   
     }

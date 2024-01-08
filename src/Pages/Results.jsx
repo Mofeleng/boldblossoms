@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import SolidBGHeroTemplate from '../Components/UserInterface/SolidBGHeroTemplate'
 import { GraphQLClient, gql } from 'graphql-request';
+import PageLoader from '../Components/PageLoader';
 
 function Results() {
 
     const [ winners, setWinners ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState(1);
+    const [ error, setError ] = useState(null);
+
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
 
     const fetchWinners = async () => {
@@ -33,11 +37,13 @@ function Results() {
             
             if (res.winners) {
                 setWinners(res.winners);
-                console.log(res)
+                setIsLoading(0);
+                setError(null);
             }
 
         } catch (error) {
-            console.log("Error: ", error);
+            setError("Something went wrong while fetching the results");
+            setIsLoading(0);
         }
     }
 
@@ -49,7 +55,14 @@ function Results() {
         }
     }, []);
 
-
+    if (isLoading) {
+        return (
+            <PageLoader />
+        )
+    }
+    if (error) {
+        return error;
+    }
     if (!winners) {
         return "Something went wrong while fetching the winners" + winners;
     }
