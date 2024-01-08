@@ -50,7 +50,9 @@ function UpcomingPagentsSection() {
         )
     }
     if (error) {
-        return error;
+        return (
+            <PageError error={error} />
+        )
     }
   return (
     <section id="upcoming_pageants">
