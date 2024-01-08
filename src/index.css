@@ -501,7 +501,7 @@ textarea {
   height: 50px;
   border-radius: 50%;
   border: 5px solid transparent;
-  border-top-color: #3498db; /* Set the color of the shiny effect */
+  border-top-color: var(--primary); /* Set the color of the shiny effect */
   animation: spin 1s linear infinite, shine 2s ease-in-out infinite;
 }
 
