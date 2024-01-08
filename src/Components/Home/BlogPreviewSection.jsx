@@ -55,7 +55,9 @@ function BlogPreviewSection() {
       )
     }
     if (error) {
-      return error;
+      return (
+        <PageError error={error} />
+      )
     }
     if (!blogs) {
         return "Failed to load";
