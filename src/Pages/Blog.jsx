@@ -70,7 +70,9 @@ function Blog() {
         )
     }
     if (error) {
-        return error;
+        return (
+            <PageError error={error} />
+        )
     }
     if (!blog || blog.length < 1) {
         return `Could not return Blog: ${blog}`
