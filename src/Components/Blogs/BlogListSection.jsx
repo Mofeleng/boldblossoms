@@ -77,7 +77,9 @@ const variables = { first };
     )
   }
   if (error) {
-    return "Something went wrong"
+    return (
+      <PageError error={error} />
+    )
   }
   if (!blogs) {
     return 'Failed to load';
