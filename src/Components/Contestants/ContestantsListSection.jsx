@@ -53,7 +53,9 @@ function ContestantsListSection() {
     )
   }
   if (error) {
-    return error;
+    return (
+      <PageError error={error} />
+    )
   }
   return (
     <section id="contestant_list">
