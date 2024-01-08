@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import PageantPreviewCard from './PageantPreviewCard'
 import SectionHeadingTemplate from '../UserInterface/SectionHeadingTemplate'
 import { gql, GraphQLClient } from 'graphql-request'
+import PageLoader from '../PageLoader';
 
 function UpcomingPagentsSection() {
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
     const [ pageants, setPageants ] = useState([]);
-    
+    const [ isLoading, setIsLoading ] = useState(1);
+    const [ error, setError ] = useState(null);
 
     const fetchPageants = async () => {
        try {
@@ -29,16 +31,27 @@ function UpcomingPagentsSection() {
     const results = await graphQLClient.request(query);
     const response = await results;
     setPageants(response.pageants);
-    console.log(response)
+    setIsLoading(0);
+    setError(null);
 
-       } catch (error) {
-        console.log("Something went wrong: ", error);
-       }
+    } catch (error) {
+        setError("Something went wrong while fetching pageants");
+        setIsLoading(0)
+    }
     }
 
     useEffect(() => {
        fetchPageants();
-    }, [])
+    }, []);
+
+    if (isLoading) {
+        return (
+            <PageLoader />
+        )
+    }
+    if (error) {
+        return error;
+    }
   return (
     <section id="upcoming_pageants">
         <div className="container">
