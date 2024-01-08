@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import ImageBackgroundHero from '../Components/Pageantry/ImageBackgroundHero';
 import PageantInformationSection from '../Components/Pageantry/PageantInformationSection';
 import PageLoader from '../Components/PageLoader';
+import PageError from '../Components/PageError';
 
 function Pageant() {
 
@@ -59,7 +60,9 @@ function Pageant() {
       )
   }
   if (error) {
-      return error;
+      return (
+        <PageError error={error} />
+      )
   }
   return (
     <>
