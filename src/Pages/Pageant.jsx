@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
 import ImageBackgroundHero from '../Components/Pageantry/ImageBackgroundHero';
 import PageantInformationSection from '../Components/Pageantry/PageantInformationSection';
+import PageLoader from '../Components/PageLoader';
 
 function Pageant() {
 
