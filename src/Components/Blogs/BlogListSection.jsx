@@ -2,12 +2,17 @@ import React, { useState, useEffect } from 'react';
 import BlogListItemTemplate from '../UserInterface/BlogListItemTemplate';
 import { gql, GraphQLClient } from 'graphql-request';
 import useConvertDateToString from '../../Hooks/useConvertDateToString';
+import PageLoader from '../PageLoader';
 
 
 function BlogListSection() {
   const [blogs, setBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 10;
+
+  const [ isLoading, setLoading ] = useState(1);
+  const [ error, setError ] = useState(null);
+
 
   const fetchBlogs = async () => {
     try {
@@ -41,10 +46,14 @@ const variables = { first };
 
       const response = await graphQLClient.request(query, variables);
       const results = await response.blogs;
-      console.log(results);
+
       setBlogs(results);
+      setLoading(0);
+      setError(null);
+
     } catch (error) {
-      console.log('Something went wrong', error);
+      setLoading(0);
+      setError("Something went wrong while loading the blogs");
     }
   };
 
@@ -62,6 +71,14 @@ const variables = { first };
     fetchBlogs();
   }, [currentPage]); // Re-fetch blogs when the currentPage changes
 
+  if (isLoading) {
+    return (
+      <PageLoader />
+    )
+  }
+  if (error) {
+    return "Something went wrong"
+  }
   if (!blogs) {
     return 'Failed to load';
   }
