@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import ContestantItem from './ContestantItem'
 import './contestant.css';
 import { GraphQLClient, gql } from 'graphql-request';
+import PageLoader from '../PageLoader';
 function ContestantsListSection() {
 
   const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
   const [ contestants, setContestants ] = useState([]);
+  const [ isLoading, setIsLoading ] = useState(1);
+  const [ error, setError ] = useState(null);
 
   useEffect(() => {
     const fetchContestants = async () => {
@@ -33,14 +36,25 @@ function ContestantsListSection() {
           const response = await graphQLClient.request(query);
           const result = await response;
           setContestants(result.contestants);
-
+          setIsLoading(0);
+          setError(null);
 
         } catch (error) {
-          return "Something went wrong while fetching contestants"
+          setIsLoading(0);
+          setError("Something went wrong while fetching the contestants.")
         }
     }
     fetchContestants();
-  }, [])
+  }, []);
+
+  if (isLoading) {
+    return (
+      <PageLoader />
+    )
+  }
+  if (error) {
+    return error;
+  }
   return (
     <section id="contestant_list">
         <div className="container">
