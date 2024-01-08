@@ -106,7 +106,9 @@ function Contestant() {
         )
     }
     if (error) {
-        return error;
+        return (
+            <PageError error={error} />
+        )
     }
     if (!contestant || contestant.length == 0) {
         return "Something went wrong"
