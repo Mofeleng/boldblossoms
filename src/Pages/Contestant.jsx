@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import useCalculateTotalCost from '../Hooks/useCalculateTotalCost';
 import axios from 'axios';
+import PageLoader from '../Components/PageLoader';
 
 function Contestant() {
 
@@ -14,6 +15,9 @@ function Contestant() {
     const [ votes, setVotes ] = useState(1);
     const [ totalCost, setTotalCost ] = useState(2);
     const [ buttonState, setButtonState ] = useState("Vote");
+    const [ isLoading, setIsLoading ] = useState(1);
+    const [ error, setError ] = useState(null);
+
 
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
     const YOCO_URL = import.meta.env.VITE_YOCO_CHECKOUT_URL;
@@ -48,9 +52,12 @@ function Contestant() {
             const response = await graphQLClient.request(query, variables);
             const results = await response;
             setContestant(results.contestant);
+            setIsLoading(0);
+            setError(null);
             
         } catch (error) {
-            console.log("Error here!: ", error)
+            setError("Something went wrong while fetching this contestant");
+            setIsLoading(0);
         }
     }
     let counter = 0;
@@ -63,7 +70,7 @@ function Contestant() {
             console.log("Function already ran")
         }
         
-    }, [])
+    }, []);
     
     const sendVotePaymentRequest = async () => {
         setButtonState("Please wait...")
@@ -92,6 +99,14 @@ function Contestant() {
             console.log("Something went wrong: ", error);
         }
         
+    }
+    if (isLoading) {
+        return (
+            <PageLoader />
+        )
+    }
+    if (error) {
+        return error;
     }
     if (!contestant || contestant.length == 0) {
         return "Something went wrong"
