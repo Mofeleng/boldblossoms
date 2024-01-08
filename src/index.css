@@ -524,6 +524,17 @@ textarea {
   }
 }
 
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffcccc; /* Set the background color for error */
+  color: #ff0000; /* Set the text color for error */
+}
+
+
 /*utility classes*/
 .text_primary {
   color: var(--primary);

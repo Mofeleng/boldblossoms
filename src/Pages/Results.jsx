@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SolidBGHeroTemplate from '../Components/UserInterface/SolidBGHeroTemplate'
 import { GraphQLClient, gql } from 'graphql-request';
 import PageLoader from '../Components/PageLoader';
+import PageError from '../Components/PageError';
 
 function Results() {
 
@@ -61,7 +62,9 @@ function Results() {
         )
     }
     if (error) {
-        return error;
+        return (
+            <PageError error={error} />
+        )
     }
     if (!winners) {
         return "Something went wrong while fetching the winners" + winners;
