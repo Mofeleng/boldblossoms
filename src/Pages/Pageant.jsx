@@ -10,24 +10,27 @@ function Pageant() {
     const { slug } = useParams();
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
     const [ pageant, setPageant ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState(1);
+    const [ error, setError ] = useState(null);
 
     const fetchPageant = async () => {
+      try {
         const graphQLClient = new GraphQLClient(ENDPOINT);
 
         const query = gql`
         query MyQuery($slug: String!) {
-  pageant(where: {slug: $slug}) {
-    coverPhoto {
-      url
-    }
-    id
-    isRunning
-    pageantName
-    information {
-      html
-    }
-  }
-}
+          pageant(where: {slug: $slug}) {
+            coverPhoto {
+              url
+            }
+            id
+            isRunning
+            pageantName
+            information {
+              html
+            }
+          }
+        }
         `;
 
         const variables = {
@@ -37,12 +40,26 @@ function Pageant() {
         const response = await graphQLClient.request(query, variables);
         const result = await response;
         setPageant(result.pageant);
-        console.log(result);
+        setIsLoading(0);
+        setError(null);
+      } catch (error) {
+        setError("Something went wrong while fetching this contestant");
+        setIsLoading(0);
+      }   
     }
 
     useEffect(() => {
         fetchPageant();
     }, []);
+
+    if (isLoading) {
+      return (
+          <PageLoader />
+      )
+  }
+  if (error) {
+      return error;
+  }
   return (
     <>
     <ImageBackgroundHero img={pageant.coverPhoto} />
