@@ -1,12 +1,16 @@
 import { GraphQLClient, gql } from 'graphql-request';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
+import PageLoader from '../Components/PageLoader';
 
 function Blog() {
 
     const { slug } = useParams();
 
     const [ blog, setBlog ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState(1);
+    const [ error, setError ] = useState(null);
+
     const ENDPOINT = import.meta.env.VITE_HYGRAPH_CONTENT_API_ENDPOINT;
 
     const fetchBlog = async () => {
@@ -41,9 +45,12 @@ function Blog() {
 
         if (res.blog) {
             setBlog(res.blog)
+            setIsLoading(0);
+            setError(null)
         }
         } catch (error) {
-            
+            setError("Something went wrong while fetching this blog :(");
+            setIsLoading(0);
         }
         
 
@@ -57,6 +64,14 @@ function Blog() {
         }
     }, []);
 
+    if (isLoading) {
+        return (
+            <PageLoader />
+        )
+    }
+    if (error) {
+        return error;
+    }
     if (!blog || blog.length < 1) {
         return `Could not return Blog: ${blog}`
     } 
